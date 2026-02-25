@@ -1,0 +1,97 @@
+/* --- Configurações Gerais --- */
+:root {
+    --primary-color: #0056b3;    /* Azul SENAI/Industrial */
+    --secondary-color: #6c757d;  /* Cinza Metálico */
+    --accent-color: #00f2ff;     /* Azul Neon/Digital */
+    --dark-bg: #1a1d20;          /* Fundo Dark */
+    --card-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+    scroll-behavior: smooth;
+    background-color: #f4f7f6;
+}
+
+/* --- Navbar Customizada --- */
+.navbar {
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.navbar-brand {
+    letter-spacing: 1px;
+}
+
+/* --- Hero Section (Efeito Gradiente Industrial) --- */
+#home {
+    background: linear-gradient(135deg, #004085 0%, #002752 100%);
+    padding: 100px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); /* Corte diagonal moderno */
+}
+
+/* --- Cards de Matérias --- */
+.materia-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.materia-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--card-shadow);
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.icon-box {
+    transition: transform 0.3s ease;
+}
+
+.materia-card:hover .icon-box {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* --- Estilização da Tabela de Projetos --- */
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.table thead {
+    background-color: var(--dark-bg);
+}
+
+.badge {
+    padding: 8px 12px;
+    font-weight: 500;
+}
+
+/* --- Customização de Botões --- */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+    background-color: #004494;
+    box-shadow: 0 4px 12px rgba(0,86,179,0.3);
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: var(--dark-bg) !important;
+    border-top: 5px solid var(--primary-color);
+}
+
+/* --- Responsividade Extra --- */
+@media (max-width: 768px) {
+    #home {
+        padding: 60px 0;
+        clip-path: none;
+    }
+}

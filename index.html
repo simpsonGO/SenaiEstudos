@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecatrônica Progress | Meu Histórico SENAI</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-cpu"></i> MECATRÔNICA<strong>SENAI</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#materias">Matérias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Mim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Diário de Aprendizado</h1>
+            <p class="lead">Documentação técnica de Eletrônica, Automação e Mecânica Industrial.</p>
+            <hr class="my-4 border-light w-25 mx-auto">
+            <a href="#materias" class="btn btn-outline-light btn-lg">Explorar Estudos</a>
+        </div>
+    </header>
+
+    <main class="container my-5" id="materias">
+        <h2 class="text-center mb-5">Áreas de Estudo</h2>
+        <div class="row g-4">
+            
+            <div class="col-md-4">
+                <article class="card h-100 border-0 shadow-sm materia-card">
+                    <div class="card-body">
+                        <div class="icon-box mb-3 text-primary fs-1">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <h5 class="card-title">Eletricidade & Eletrônica</h5>
+                        <p class="card-text text-muted">Leis de Ohm, semicondutores, circuitos lógicos e medições com multímetro/osciloscópio.</p>
+                        <a href="paginas/eletronica.html" class="btn btn-primary w-100">Ver Notas</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article class="card h-100 border-0 shadow-sm materia-card">
+                    <div class="card-body">
+                        <div class="icon-box mb-3 text-success fs-1">
+                            <i class="bi bi-robot"></i>
+                        </div>
+                        <h5 class="card-title">Automação Industrial</h5>
+                        <p class="card-text text-muted">Programação de CLPs (Ladder), sensores industriais, sistemas pneumáticos e hidráulicos.</p>
+                        <a href="paginas/automacao.html" class="btn btn-success w-100">Ver Notas</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article class="card h-100 border-0 shadow-sm materia-card">
+                    <div class="card-body">
+                        <div class="icon-box mb-3 text-danger fs-1">
+                            <i class="bi bi-gear-wide-connected"></i>
+                        </div>
+                        <h5 class="card-title">Mecânica & CAD</h5>
+                        <p class="card-text text-muted">Desenho técnico, metrologia, AutoCAD, SolidWorks e processos de fabricação.</p>
+                        <a href="paginas/mecanica.html" class="btn btn-danger w-100">Ver Notas</a>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </main>
+
+    <section id="projetos" class="bg-white py-5">
+        <div class="container">
+            <h2 class="mb-4">Últimas Práticas em Bancada</h2>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Data</th>
+                            <th>Projeto / Experimento</th>
+                            <th>Status</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>20/02/2026</td>
+                            <td>Montagem de Partida Direta de Motor</td>
+                            <td><span class="badge bg-success">Concluído</span></td>
+                            <td><button class="btn btn-sm btn-outline-dark">Detalhes</button></td>
+                        </tr>
+                        <tr>
+                            <td>15/02/2026</td>
+                            <td>Circuito com Transistor NPN (Chave)</td>
+                            <td><span class="badge bg-warning text-dark">Em Revisão</span></td>
+                            <td><button class="btn btn-sm btn-outline-dark">Detalhes</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">© 2026 - Portfólio de Mecatrônica SENAI</p>
+            <small class="text-secondary">Criado com HTML, Bootstrap e dedicação.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
