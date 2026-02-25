@@ -2,105 +2,36 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>SENAI | Mechatronics Data-Log</title>
-    <style>
-        /* Visual Dark Industrial */
-        body {
-            background-color: #0a0a0c;
-            color: #00ff41; /* Verde Matrix/Terminal */
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-
-        #terminal {
-            width: 100%;
-            max-width: 800px;
-            border: 1px solid #00ff41;
-            padding: 20px;
-            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
-        }
-
-        header { border-bottom: 2px double #00ff41; margin-bottom: 20px; padding-bottom: 10px; }
-        
-        .entry {
-            margin-bottom: 25px;
-            padding: 10px;
-            border: 1px dashed #333;
-            transition: 0.3s;
-        }
-
-        .entry:hover { background: #111; border-color: #00ff41; }
-
-        .meta { color: #888; font-size: 0.8rem; }
-        .tag { background: #00ff41; color: #000; padding: 2px 5px; font-weight: bold; margin-right: 10px; }
-        .data-value { color: #fff; }
-
-        input {
-            background: #000;
-            border: 1px solid #00ff41;
-            color: #00ff41;
-            padding: 10px;
-            width: 100%;
-            margin-bottom: 20px;
-            outline: none;
-        }
-
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } }
-        .cursor { animation: blink 1s infinite; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Maker | Aluno para Aluno</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div id="terminal">
     <header>
-        <h1>SYSTEM.MECATRONICA_LOG [v2.6]</h1>
-        <p>Aguardando entrada de dados...<span class="cursor">_</span></p>
+        <nav>
+            <div class="logo">SENAI <span>Community</span></div>
+            <button id="theme-toggle">🌙 Alternar Tema</button>
+        </nav>
     </header>
 
-    <input type="text" id="scanner" placeholder="[ FILTRAR LOGS... ]">
+    <main>
+        <section class="hero">
+            <h1>Onde a teoria encontra a graxa. 🛠️</h1>
+            <p>Dicas, resumos e networking para os futuros técnicos.</p>
+        </section>
 
-    <div id="log-container">
-        </div>
-</div>
+        <section id="cards-container" class="grid-container">
+            </section>
 
-<script>
-    // --- SUA ÚNICA TAREFA É MEXER NESTA LISTA ABAIXO ---
-    const meusEstudos = [
-        { data: "2026-02-25", materia: "CLP", titulo: "Lógica Ladder", desc: "Desenvolvimento de selo e intertravamento para motores." },
-        { data: "2026-02-20", materia: "PNEUMATICA", titulo: "Válvula Solenoide", desc: "Acionamento indireto de cilindro dupla ação." },
-        { data: "2026-02-15", materia: "ELETRONICA", titulo: "Filtro Retificador", desc: "Uso de capacitores para redução de ripple em fontes." },
-        { data: "2026-02-10", materia: "ROBOTICA", titulo: "Cinemática Direta", desc: "Cálculo de coordenadas para braço articulado 3 eixos." }
-    ];
+        <section class="newsletter">
+            <h3>Receba dicas de TCC no seu e-mail</h3>
+            <form id="contact-form">
+                <input type="email" placeholder="Seu melhor e-mail" required>
+                <button type="submit">Inscrever</button>
+            </form>
+        </section>
+    </main>
 
-    const container = document.getElementById('log-container');
-    const scanner = document.getElementById('scanner');
-
-    function renderizar(dados) {
-        container.innerHTML = dados.map(item => `
-            <div class="entry">
-                <div class="meta">ID: ${Math.random().toString(36).substr(2, 5).toUpperCase()} | ${item.data}</div>
-                <div><span class="tag">${item.materia}</span> <strong>${item.titulo}</strong></div>
-                <div class="data-value mt-2">> ${item.desc}</div>
-            </div>
-        `).join('');
-    }
-
-    // Filtro em tempo real
-    scanner.addEventListener('input', (e) => {
-        const termo = e.target.value.toLowerCase();
-        const filtrados = meusEstudos.filter(item => 
-            item.titulo.toLowerCase().includes(termo) || 
-            item.materia.toLowerCase().includes(termo)
-        );
-        renderizar(filtrados);
-    });
-
-    // Início
-    renderizar(meusEstudos);
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,52 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Efeito de Digitação no Hero
-    const title = document.querySelector('#home h1');
-    const text = title.innerText;
-    title.innerText = '';
-    let i = 0;
+// Dados fictícios dos cursos/dicas
+const conteudos = [
+    { titulo: "Mecatrônica", desc: "Como não queimar o PLC no primeiro teste." },
+    { titulo: "Logística", desc: "Planilhas de Excel que vão salvar seu estágio." },
+    { titulo: "TI / Software", desc: "O guia definitivo de Git para iniciantes." },
+    { titulo: "Eletrotécnica", desc: "Cálculos de carga sem dor de cabeça." }
+];
 
-    function typeWriter() {
-        if (i < text.length) {
-            title.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        }
-    }
-    typeWriter();
+const container = document.getElementById('cards-container');
+const themeBtn = document.getElementById('theme-toggle');
 
-    // 2. Filtro de Projetos na Tabela
-    // (Simula uma busca real conforme você digita)
-    const searchInput = document.createElement('input');
-    searchInput.type = 'text';
-    searchInput.placeholder = 'Filtrar práticas...';
-    searchInput.className = 'form-control mb-3 w-50';
-    
-    const tabelaProjetos = document.querySelector('#projetos .container');
-    const tabela = document.querySelector('table tbody');
-    
-    // Insere o campo de busca antes da tabela
-    tabelaProjetos.insertBefore(searchInput, document.querySelector('.table-responsive'));
-
-    searchInput.addEventListener('keyup', () => {
-        const value = searchInput.value.toLowerCase();
-        const rows = tabela.querySelectorAll('tr');
-
-        rows.forEach(row => {
-            const text = row.innerText.toLowerCase();
-            row.style.display = text.includes(value) ? '' : 'none';
-        });
-    });
-
-    // 3. Log de Inicialização (Console Debug)
-    console.log("Sistemas de Mecatrônica Online... Status: 100%");
+// Renderizar Cards
+conteudos.forEach(item => {
+    container.innerHTML += `
+        <div class="card">
+            <h3>${item.titulo}</h3>
+            <p>${item.desc}</p>
+            <small>Postado por: Veterano_01</small>
+        </div>
+    `;
 });
 
-// 4. Função para destacar a linha da tabela ao clicar
-const rows = document.querySelectorAll('tbody tr');
-rows.forEach(row => {
-    row.addEventListener('click', () => {
-        rows.forEach(r => r.classList.remove('table-primary'));
-        row.classList.add('table-primary');
-    });
+// Lógica de Dark Mode
+themeBtn.addEventListener('click', () => {
+    const currentTheme = document.body.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+        document.body.removeAttribute('data-theme');
+        themeBtn.innerText = "🌙 Dark Mode";
+    } else {
+        document.body.setAttribute('data-theme', 'dark');
+        themeBtn.innerText = "☀️ Light Mode";
+    }
 });
